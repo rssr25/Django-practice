@@ -1,3 +1,4 @@
+{% load static %}
 {# HTML5 declaration #}
 <!DOCTYPE html>
 <html>
@@ -5,7 +6,7 @@
 	<head>
 		<title>{% block title %} Home {% endblock title %} | CRM Easy</title>
 		{% block head_favicon %}
-			<link rel="icon" type="image/png" href="{{ STATIC_URL }}/images/favicon.ico">
+			<link rel="icon" type="image/png" href="{% static "images/favicon.ico"%}">
 		{% endblock head_favicon%}
 
 		{% block head_meta %}
@@ -25,9 +26,9 @@
 
 		{% block head_css %}
 			{% block head_css_site %}
-				<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/bootstrap.min.css" media="screen">
-				<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/css/app.css" media="screen">
-			{% block head_css_site %}
+				<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}" media="screen">
+				<link rel="stylesheet" type="text/css" href="{% static "css/app.css"%}" media="screen">
+			{% endblock head_css_site %}
 			{% block head_css_section %}{% endblock head_css_section %}
 			{% block head_css_page %}{% endblock head_css_page %}
 		{% endblock head_css %}
@@ -79,9 +80,9 @@
 	{# Set of blocks that can be used to display JavaScript files #}
 	{% block footer_javascript %}
 		{% block footer_javascript_site %}
-			<script src="{{ STATIC_URL }}/js/jquery.min.js"></script>
-			<script src="{{ STATIC_URL }}/js/bootstrap.min.js"></script>
-			<script src="{{ STATIC_URL }}/js/app.js"></script>
+			<script src="{% static "js/jquery.min.js"%}"></script>
+			<script src="{% static "js/bootstrap.min.js"%}"></script>
+			<script src="{% static "js/app.js"%}"></script>
 		{% endblock footer_javascript_site %}
 		{% block footer_javascript_section %}{% endblock footer_javascript_section %}
 		{% block footer_javascript_page %}{% endblock footer_javascript_page %}

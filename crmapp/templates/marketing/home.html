@@ -1,5 +1,7 @@
-<!--First we are going to inherit the base.html file-->
 {% extends 'base.html' %}
+{% load static %}
+<!--First we are going to inherit the base.html file-->
+
 {% block title %} Home {% endblock title %}
 {% block nav-style %}mkt-nav{% endblock nav-style %}
 
@@ -27,17 +29,17 @@
 		<h2 class="mkt-s2-h">Why Buy CRM Easy?</h2>
 		<div class="mkt-s2-body">
 			<div class="col-md-4 mkt-vp">
-				<img src="{{ STATIC_URL }}images/clock.png" class=""/>
+				<img src="{% static "images/clock.png" %}" class=""/>
 				<h5>Save Time</h5>
 				<p>Tracking your customers in an easy to use application you'll be able to find them faster. Don't waster time searching email, looking at busoness cards, or looking online - just open CRM Easy!</p>
 			</div>
 			<div class="col-md-4 mkt-vp">
-				<img src="{{ STATIC_URL }}images/lightbulb.png" class="">
+				<img src="{% static "images/lightbulb.png"%}" class="">
 				<h5>Stay Current</h5>
 				<p>Keeping track of customer details is a critical part of serving the customer right. Make sure you know what they want and when they want it. Use CRM Easy to track all customer communications.</p>
 			</div>
 			<div class="col-md-4 mkt-vp">
-				<img src="{{ STATIC_URL }}images/dollar.png" class="">
+				<img src="{% static "images/dollar.png"%}" class="">
 				<h5>Win Business</h5>
 				<p>By tracking customers and staying up
             to date on their requirements you'll be
