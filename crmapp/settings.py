@@ -46,7 +46,7 @@ if ENV_ROLE == 'development':
     TEMPLATE_DEBUG = DEBUG
     CRMEASY_DB_PASS = get_env_variable('CRMEASY_DB_PASS')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.126.226.147', '127.0.0.1']
 
 
 # Application definition
