@@ -19,7 +19,7 @@
 			</div>
 			<div class="row">
 				{# First Signup link #}
-				<a href="" class="sign-up btn btn-success"> Sign Up Now for $15/month!</a>
+				<a href="{% url 'sub-new' %}" class="sign-up btn btn-success"> Sign Up Now for $15/month!</a>
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		{# Secong signup link #}
-		<a href="" class="sgn-btm">SIGN UP FOR ONLY $15/MONTH</a>
+		<a href="{% url 'sub-new' %}" class="sgn-btm">SIGN UP FOR ONLY $15/MONTH</a>
 	</div>
 
 {% endblock content %}
