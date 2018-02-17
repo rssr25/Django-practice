@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from marketing.views import HomePage
+from subscribers.views import subscriber_new
 
 urlpatterns = [
 
@@ -23,7 +24,7 @@ urlpatterns = [
 		url(r'^$', HomePage.as_view(), name="home"),
 
 		#Subscriber related URLs
-		url(r'^$', 'crmapp.subscribers.views.subscriber_new', name='sub_new'),
+		url(r'^signup/$', subscriber_new, name='sub_new'),
 
 
 		#Admin URL
