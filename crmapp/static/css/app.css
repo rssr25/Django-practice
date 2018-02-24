@@ -54,10 +54,6 @@
 .m-b-none {
     margin-bottom: 0 !important;
 }
-
-
-.errorlist {
-    padding: 0;
     list-style-type: none;
     color: darkred;
 }
