@@ -13,6 +13,8 @@ from django.http import HttpResponseRedirect
 #This imports the SubscriberForm that was created in the previous lesson.
 from .forms import SubscriberForm
 
+from .models import Subscriber
+
 # Create your views here.
 
 #This defines the view function that will be used to process requests made to the /signup/ URL. 
@@ -30,13 +32,24 @@ def subscriber_new(request, template='subscribers/subscriber_new.html'):
 			username = form.cleaned_data['username']
 			password = form.cleaned_data['password1']
 			email = form.cleaned_data['email']
+			first_name = form.cleaned_data['first_name']
+			last_name = form.cleaned_data['last_name']
 
 			#create the user record
-			user = User(username=username, email = email)
+			user = User(username=username, email = email,
+						first_name=first_name, last_name=last_name)
 			user.set_password(password)
 			user.save()
 
 			#create subscriber record
+			address_one = form.cleaned_data['address_one']
+			address_two = form.cleaned_data['address_two']
+			city = form.cleaned_data['city']
+			state = form.cleaned_data['state']
+			sub = Subscriber(address_one=address_one, address_two=address_two,
+							 city=city, state=state, user_rec=user)
+
+			sub.save()
 			#process payment (via Stripe)
 			#Auto login the user
 			return HttpResponseRedirect('/success/')
