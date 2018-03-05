@@ -18,6 +18,7 @@ from django.contrib import admin
 #admin.autodiscover()
 from marketing.views import HomePage
 from subscribers.views import subscriber_new
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
 
@@ -33,8 +34,8 @@ urlpatterns = [
 
 
 		#Login/Logout URLs
-		url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}), 
-		url(r'^login/$', 'djnago.contrib.auth.views.logout', {'next_page': '/login/'})
+		url(r'^login/$', login, {'template_name': 'login.html'}, name="login"), 
+		url(r'^logout/$', logout, {'next_page': '/logout/'}, name="logout"),
 
 
 		#Account related URLs
