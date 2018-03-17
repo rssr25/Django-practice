@@ -19,6 +19,7 @@ from django.contrib import admin
 from marketing.views import HomePage
 from subscribers.views import subscriber_new
 from django.contrib.auth.views import login, logout
+from accounts.views import AccountList
 
 urlpatterns = [
 
@@ -39,7 +40,7 @@ urlpatterns = [
 
 
 		#Account related URLs
-
+		url(r'^account/list/$', AccountList.as_view(), name = 'account_list'),
 
 
 		#Contact related URLs
