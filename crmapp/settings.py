@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crmapp.marketing',
-    'crmapp.subscribers'
+    'crmapp.subscribers',
     'crmapp.accounts'
 ]
 
