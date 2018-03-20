@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 from .models import Account
+from django.http import HttpResponseForbidden
 # Create your views here.
 
 class AccountList(ListView):
@@ -33,3 +34,17 @@ class AccountList(ListView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(AccountList, self).dispatch(*args, **kwargs)
+
+@login_required()
+def account_detail(request, uuid):
+
+	account = Account.objects.get(uuid = uuid)
+	if account.owner != request.user:
+		return HttpResponseForbidden()
+
+	variables = {
+
+		'account': account,
+	}
+
+	return render(request, 'accounts/account_detail.html', variables)

@@ -41,7 +41,7 @@ urlpatterns = [
 
 		#Account related URLs
 		url(r'^account/list/$', AccountList.as_view(), name = 'account_list'),
-
+		url(r'^account/(?P<uuid>[\w-]+)/', include(account_urls)),
 
 		#Contact related URLs
 
