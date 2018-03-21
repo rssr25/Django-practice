@@ -20,6 +20,7 @@ from marketing.views import HomePage
 from subscribers.views import subscriber_new
 from django.contrib.auth.views import login, logout
 from accounts.views import AccountList
+from accounts.urls import account_urls
 
 urlpatterns = [
 

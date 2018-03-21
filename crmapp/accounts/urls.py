@@ -1,8 +1,7 @@
-from django.conf.urls import patters, url
+from django.conf.urls import url
+from views import account_detail
 
-accounts_urls = patterns('', 
+account_urls = [
 
-		url(r'^$', 'crmapp.accounts.views.account_detail',
-				name = 'account_detail'
-			),
-	)
+		url(r'^$', account_detail, name = 'account_detail'),
+	]
